@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMSystem - Login</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/cadastro.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <header>
+      <div class="logo">OM <span>System</span></div>
+      <nav>
+        <a href="/tipoCadastro" class="login-link">Não tem uma conta na OM? | <strong>Cadastre-se</strong></a>
+      </nav>
+    </header>
+
+    <main>
+        <div class="welcome-text">
+            <strong id="title">Faça login</strong>
+        </div>
+
+        <form>
+            <div class="inputs">
+                <input type="email" id="email" placeholder="E-mail" maxlength="100" required>
+                <input type="password" id="senha" placeholder="Senha" maxlength="16" required>
+            </div>
+    
+          <button type="submit" class="continue-button" onclick="entrar(event)">Entrar</button>
+        </form>
+    </main>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/cadastro-login.js"></script>
+</body>
+</html>

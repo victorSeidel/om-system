@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OM System - Terapia</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/index.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo">OM <span>System</span></div>
+    <nav>
+      <a href="#"><strong>Sobre nós</strong></a>
+      <a href="#"><strong>Perguntas Frequentes</strong></a>
+      <a href="/tipoCadastro"><button class="btn-login" id="btn-login"><strong>Entrar</strong></button></a>
+      <a href="/terapeuta-perfil"><button class="btn-logout" id="btn-logout"><strong>Perfil</strong></button></a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Você <strong>Merece<br>Ser</strong> Feliz!</h1>
+    <p class="sub"><strong>Que tipo de terapia você está procurando?</strong></p>
+
+    <div class="search-bar">
+      <span class="search-icon"><i class="fas fa-search"></i></span>
+      <input type="text" id="especialidadeInput" placeholder="Digite aqui a especialidade" />
+      <button onclick="pesquisar()">Pesquisar</button>
+    </div>
+
+    <h2>Pesquisas popular</h2>
+
+    <div class="cards">
+      <div class="card green">
+        <img src="https://i.imgur.com/Yz1V0fQ.png" alt="Individual" />
+        <div class="card-text">
+          <h3>Individual</h3>
+          <p>Para mim <span><i class="fas fa-arrow-right"></i></span></p>
+        </div>
+      </div>
+
+      <div class="card white">
+        <img src="https://i.imgur.com/Fnpkgo4.png" alt="Casais" />
+        <div class="card-text">
+          <h3>Casais</h3>
+          <p>Para mim e meu parceiro <span><i class="fas fa-arrow-right"></i></span></p>
+        </div>
+      </div>
+
+      <div class="card olive">
+        <img src="https://i.imgur.com/1sD6VaY.png" alt="Adolescente" />
+        <div class="card-text">
+          <h3>Adolescente</h3>
+          <p>Para meu filho <span><i class="fas fa-arrow-right"></i></span></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/config.js"></script>
+  <script>
+      const params = new URLSearchParams(window.location.search);
+      const tipo = params.get('tipo');
+
+      document.getElementById('btn-login').style.display = 'none';
+      document.getElementById('btn-logout').style.display = 'none';
+
+      async function verificarLogin() 
+      {
+        const response = await fetch('/api/status', { method: 'GET', credentials: 'include' });
+        const data = await response.json();
+
+        if (data.logado) 
+        {
+          document.getElementById('btn-login').style.display = 'none';
+          document.getElementById('btn-logout').style.display = 'inline-block';
+        } 
+        else 
+        {
+          document.getElementById('btn-login').style.display = 'inline-block';
+          document.getElementById('btn-logout').style.display = 'none';
+        }
+      }
+
+      async function pesquisar()
+      {
+        const valor = document.getElementById('especialidadeInput').value;
+        if (valor.trim() !== "") window.location.href = `/inicio?especialidade=${encodeURIComponent(valor)}`;
+      }
+
+      window.onload = verificarLogin;
+  </script>
+</body>
+</html>

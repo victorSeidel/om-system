@@ -1,0 +1,458 @@
+main {
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    background: none;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.search-bar {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fdf9f4;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.search-bar .search-icon {
+    font-size: 18px;
+    color: #a59b6d;
+    padding: 0 14px;
+    border-right: 1px solid #a59b6d;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    outline: none;
+    color: #555;
+}
+
+.search-bar button {
+    background-color: #a59b6d;
+    border: none;
+    border-radius: 12px;
+    height: 40px;
+    min-width: 100px;
+    padding: 0 15px;
+    margin: 5px 5px 5px 0px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+select {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    font-size: 16px;
+    padding: 12px;
+    height: 50px;
+    background-color: white;
+    border-radius: 12px;
+    border: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+}
+
+.sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 1200px) {
+    .sections {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.section-container {
+    border-radius: 12px;
+    padding: 20px;
+}
+
+#eventos-sec {
+    background-color: white;
+    border-radius: 12px;
+}
+
+.events-title {
+    padding: 10px;
+    background-color: #84855D;
+    color: white;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0px 0px 15px 0px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card label strong {
+    color: #008423;
+    font-size: 20px;
+}
+
+.card label, .card p {
+    color: black;
+}
+
+.card label span {
+    color: gray;
+    font-size: 12px;
+}
+
+.card button {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.texts div {
+    padding: 0px 0px 7px 0px;
+}
+
+.evento-dia {
+    color: blue  !important;
+    font-size: 14px !important;
+}
+
+.evento-nome {
+    color: black  !important;
+    font-size: 24px !important;
+}
+
+.evento-tipo {
+    color: #008423 !important;
+    font-size: 16px !important;
+}
+
+.evento-local {
+    color: gray !important;
+    font-size: 16px !important;
+}
+
+.atend {
+    background-color: #008423;
+    color: white;
+}
+
+.atend:hover {
+    background-color: #0b7227;
+}
+
+.perf {
+    background-color: white;
+    color: #008423;
+}
+
+.perf:hover {
+    text-decoration: underline;
+}
+
+.eventos-det-btn {
+    margin-top: 50px;
+    background-color: white;
+    color: blue;
+    border: 1px solid blue !important;
+}
+
+.eventos-det-btn:hover {
+    background-color: blue;
+    color: white;
+}
+
+.eventos-nav-btn {
+    cursor: pointer;
+    background-color: #008423;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.eventos-nav-btn:hover {
+    background-color: #0b7227;
+}
+
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    width: 1015px;
+    border-radius: 12px;
+    padding: 30px;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.agendamento-container, .perfil-container {
+    display: flex;
+    gap: 30px;
+}
+
+.terapeuta-info {
+    width: 35%;
+}
+
+.foto-terapeuta {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.terapeuta-info h3, .perfil-container h3 {
+    margin: 10px 0 5px;
+    color: #267C66;
+}
+
+.terapeuta-info p, .perfil-container {
+    color: black;
+    margin: 20px 0px;
+}
+
+.tempo, .preco {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.tempo span {
+    color: black;
+    display: block;
+    font-size: 18px;
+}
+
+.preco span {
+    color: white;
+    background-color: #008423;
+    border-radius: 12px;
+    border: none;
+    padding: 10px;
+    display: block;
+    font-size: 16px;
+}
+
+.agenda, .avaliacoes {
+    width: 90%;
+    background-color: #E7E7E7;
+    margin: 10px !important;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.dias {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dias button {
+    background: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 18%;
+    cursor: pointer;
+}
+
+.dias button.active {
+    border: 2px solid #a884f2;
+    background: #f9f6ff;
+}
+
+.horarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0px 0px 100px;
+}
+
+.horarios button {
+    flex: 1 1 30%;
+    padding: 10px;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.horarios button.active {
+    border: 2px solid #a884f2;
+    background: #f9f6ff;
+    font-weight: bold;
+}
+
+.agendar-btn {
+    background: #008423;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    float: right;
+    cursor: pointer;
+} 
+
+#dias-container {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.btn-dia {
+    padding: 20px 30px;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    transition: 0.2s;
+    color: black;
+    font-weight: bold;
+}
+
+.btn-dia:hover {
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+.btn-dia.ativo {
+    background-color: rgba(0, 0, 255, 0.1);
+    color: #1e3a8a;
+    border: 2px solid #a884f2;
+    background: #f9f6ff;
+}
+
+#horarios-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-horario {
+    padding: 10px 14px;
+    background: white;
+    border: 1px solid #90cdf4;
+    border-radius: 6px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    max-width: 180px;
+}
+
+.btn-horario:hover {
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+.btn-horario.ativo {
+    border: 2px solid #a884f2;
+    background: #f9f6ff;
+    color: #1e3a8a;
+}  
+
+.btn-nav {
+    padding: 10px 14px;
+    color: blue;
+    background-color: #E7E7E7;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-nav:hover {
+    background-color: #e5e7eb;
+}
+
+.reviews-container {
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.avaliacao {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.avaliacao-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 0px 0px 5px 0px;
+}
+
+.estrelas {
+    color: gold;
+}
+
+.comentario {
+    font-style: italic;
+    margin: 0px 0px 5px 0px;
+}
+
+.resumo {
+    color: #555;
+    font-size: 13px;
+}
+
+.nota {
+    margin-bottom: 5px;
+}
+
+.aval-navegacao {
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    width: 90%;
+}

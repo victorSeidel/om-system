@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMSystem - Início</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/navbar.css"/>
+    <link rel="stylesheet" href="../css/home.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <header>
+      <div class="logo">OM <span>System</span></div>
+      <nav>
+        <a href="/inicio" class="login-link" style="text-decoration: underline;"><strong>Home</strong></a>
+        <a href="/agendamentos" class="login-link"><strong>Agendamentos</strong></a>
+        <a href="/" class="login-link"><strong>Sessões realizadas</strong></a>
+        <a href="/eventos" class="login-link"><strong>Eventos</strong></a>
+      </nav>
+      <div style="display:flex;">
+        <div class="logo"><img src="" alt="" id="perfil-img" width="40px" height="40px" style="border-radius: 50%;"></div>
+      </div>
+    </header>
+
+    <main>
+        <div class="filters">
+            <div class="search-bar">
+                <span class="search-icon"><i class="fas fa-search"></i></span>
+                <input type="text" placeholder="Pesquisar" id="filtro-input"/>
+                <button onclick="pesquisarComFiltro()">Pesquisar</button>
+            </div>
+            <select name="" id="filtro-select">
+                <option value="nome">Nome</option>
+                <option value="especialidade">Especialidade</option>
+                <option value="area">Tipos de tratamentos</option>
+            </select>
+            <select name="" id="">
+                <option value="">Tipo de agendamento</option>
+            </select>
+        </div>
+
+        <div class="sections">
+            <section class="section-container" id="main-sec"></section>
+            <section class="section-container" id="eventos-sec"></section>
+        </div>
+
+        <div id="modal-agendamento" class="modal hidden">
+            <div class="modal-content">
+              <div class="agendamento-container">
+                <div class="terapeuta-info">
+                    <img id="modal-foto" src="https://via.placeholder.com/80" alt="Foto" class="foto-terapeuta">
+                    <h3 id="modal-nome">Nome Terapeuta</h3>
+                    <p id="modal-descricao">
+                      Descrição aqui.
+                    </p>
+                    <div class="tempo"><span id="modal-tempo"></span></div>
+                    <div class="preco"><span id="modal-preco"></span></div>
+                </div>
+          
+                <div class="agenda">
+                    <div id="dias-navegacao" style="display: flex; align-items: center; gap: 12px;">
+                        <button id="btn-anterior" class="btn-nav">&lt;</button>
+                        <div id="dias-container" style="display: flex; gap: 10px; overflow-x: auto;"></div>
+                        <button id="btn-proximo" class="btn-nav">&gt;</button>
+                    </div>
+                  <div class="horarios" id="horarios-container"></div>
+                  <button class="agendar-btn" onclick="agendar()">AGENDAR</button>
+                </div>
+              </div>
+            </div>
+        </div>          
+
+        <div id="modal-perfil" class="modal hidden">
+          <div class="modal-content">
+            <div class="perfil-container">
+              <div class="terapeuta-info">
+                <img id="modalP-foto" src="https://via.placeholder.com/80" alt="Foto" class="foto-terapeuta">
+                <h3 id="modalP-nome">Nome Terapeuta</h3>
+                <p id="modalP-descricao"> Descrição aqui.</p>
+                <div class="tempo"><span id="modalP-tempo"></span></div>
+                <div class="preco"><span id="modalP-preco"></span></div>
+              </div>
+
+              <div class="aval-navegacao">
+                <button id="aval-anterior" class="btn-nav">&lt;</button>
+                <div class="avaliacoes" id="avaliacoes-container"></div>
+                <button id="aval-proximo" class="btn-nav">&gt;</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </main>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/home.js"></script>
+</body>
+</html>

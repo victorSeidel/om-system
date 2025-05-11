@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OM System - Perfil</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/perfil.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <header>
+        <div class="logo">OM <span>System</span></div>
+        <div>
+            <button style="background: none; border:none; cursor: pointer;" onclick="abrirNotificacoes()"><img src="" alt="" id="perfil-img" width="40px" height="40px" style="border-radius: 50%;"></button> 
+            <a href="" class="login-link"><strong id="title">[NOME]</strong></a>
+        </div>
+    </header>
+    
+    <div class="sidebar">
+        <div class="main-menu">
+            <div class="menu-item" data-section="inicio">
+                <i class="fas fa-home"></i>
+                <span>Início</span>
+            </div>
+            <div class="menu-item" data-section="conta">
+                <i class="fas fa-user-circle"></i>
+                <span>Minha conta</span>
+            </div>
+            <div class="menu-item" data-section="historico">
+                <i class="fas fa-history"></i>
+                <span>Histórico</span>
+            </div>
+            <div class="menu-item" data-section="calendly">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Calendly</span>
+            </div>
+            <div class="menu-item" data-section="suporte">
+                <i class="fas fa-headset"></i>
+                <span>Suporte</span>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="section" id="inicio">
+            <div class="inicio-main-menu">
+                <div class="inicio-menu-item" data-section="agenda"><span>Confira sua agenda</span></div>
+                <div class="inicio-menu-item active" data-section="evento"><span>Criar evento</span></div>
+                <div class="inicio-menu-item" data-section="financeiro"><span>Painel Financeiro</span></div>
+            </div>
+
+            <div class="inicio-section" id="agenda">
+                AGENDA
+            </div>
+
+            <div class="inicio-section" id="evento">
+                <div class="inicio-field">
+                    <div class="inicio-column">
+                        <img src="" alt="" id="preview-img">
+                        <label class="file-upload">
+                            <form enctype="multipart/form-data"><input type="file" name="imagem" id="evento-img-upload" class="modal-input file-hidden" accept="image/*"/></form>
+                            <span class="file-name">1200 x 675 pixels (tamanho recomendado)</span>
+                            <span class="file-text">Upload da imagem</span>
+                        </label>
+                    </div>
+                    <div class="inicio-column">
+                        <div><label class="modal-label">Nome do evento</label></div>
+                        <div><input type="text" class="modal-input" id="evento-nome"/></div>
+
+                        <div class="sub-columns-container">
+                            <div class="inicio-sub-column">
+                                <div><label class="modal-label">Data do evento</label></div>
+                                <div><input type="date" class="modal-input" id="evento-data"/></div>
+                                <div><label class="modal-label">Tipo do evento</label></div>
+                                <div><select class="modal-select"></select></div>
+                            </div>
+                            <div class="inicio-sub-column">
+                                <div><label class="modal-label">Hora do evento</label></div>
+                                <div><input type="time" class="modal-input" id="evento-hora"/></div>
+                                <div><label class="modal-label">Localização / Plataforma</label></div>
+                                <div><input type="text" class="modal-input" id="evento-local" placeholder="Digite o endereço presencial ou a plataforma online"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inicio-field">
+                    <div class="inicio-column">
+                        <div><label class="modal-label">Detalhes do evento</label></div>
+                        <div><textarea name="" class="modal-input" style="resize:none; height:100px;" id="evento-detalhes" placeholder="Explique sobre o evento para os participantes"></textarea></div>
+                        <div><label class="modal-label">Link de inscrição</label></div>
+                        <div><input type="text" class="modal-input" id="evento-link" placeholder="Cole o link de inscrição (ex: whatsapp business, forms google, sympla, eduzz)"/></div>
+                    </div>
+                </div>
+
+                <button id="pub-evento-btn" class="pub-evento-btn">Publicar evento</button>
+            </div>
+
+            <div class="inicio-section" id="financeiro">
+                Financeiro
+            </div>
+        </div>
+    
+        <div class="section" id="conta">
+            <div>
+                <h2>Dados Cadastrais</h2>
+                <div class="info-bloco">
+                    <div class="labels">
+                        <label><strong>Nome Fantasia: </strong><span id="fantasia"></span></label>
+                        <label><strong>Razão Social: </strong><span id="razao"></span></label>
+                        <label><strong>Representante Legal: </strong><span id="nome"></span></label>
+                        <label><strong>CPF do Representante: </strong><span id="cpf"></span></label>
+                        <label><strong>E-mail: </strong><span id="email"></span></label>
+                        <label><strong>Telefone: </strong><span id="telefone"></span></label>
+                        <label><strong>Endereço: </strong><span id="endereco"></span></label>
+                    </div>
+                    <button class="edit-btn" data-section="dados-cadastrais">EDITAR DADOS</button>
+                </div>
+            </div>
+            <div>
+                <h2>Biografia</h2>
+                <div class="info-bloco">
+                    <div class="labels">
+                        <label><strong>Especialidade: </strong><span id="especialidade"></span></label>
+                        <label><strong>Área de Trabalho: </strong><span id="area"></span></label>
+                    </div>
+                    <button class="edit-btn" data-section="biografia">EDITAR DADOS</button>
+                </div>
+            </div>
+            <div>
+                <h2>Honorários</h2>
+                <div class="info-bloco">
+                    <div class="labels">
+                        <label><strong>Tempo da Sessão: </strong><span id="tempo"></span> horas</label>
+                        <label><strong>Valor por Sessão: </strong><span id="preco"></span></label>
+                    </div>
+                    <button class="edit-btn" data-section="honorarios">EDITAR DADOS</button>
+                </div>
+            </div>
+            <div>
+                <h2>Conta Bancária</h2>
+                <div class="info-bloco">
+                    <div class="labels">
+                        <label><span id="conta-banco">Banco | Agência | Conta | Favorecido</span></label>
+                    </div>
+                    <button class="edit-btn" data-section="conta-bancaria">EDITAR DADOS</button>
+                </div>
+            </div>
+            <div>
+                <h2>Assinatura</h2>
+                <div class="info-bloco">
+                    <div class="labels">
+                        <label><strong>[Nome do Plano]</strong></label>
+                        <label>RS 00,00 / Mensal</label>
+                    </div>
+                    <div class="links">
+                        <a href="" class="alterar">Alterar forma de pagamento</a>
+                        <a href="" class="cancelar">Cancelar assinatura</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="section" id="historico">
+            <div id="hist-container"></div>
+        </div>
+    
+        <div class="section" id="calendly">
+            <h2 style="color: black">Quando você está disponível para atender os pacientes?</h2>
+            <p>Você só estará reservado durante esses horários (você pode alterar esses horários e adicionar outros agendamentos posteriormente)</p>
+            <div class="horario-semanal">
+                <div class="dia-horario" data-dia="domingo">
+                    <label><strong>DOM</strong></label>
+                    <div class="horario-input">
+                        <input type="time" value="09:00">
+                        <span> - </span>
+                        <input type="time" value="17:00">
+                    </div>
+                </div>
+                <div class="dia-horario" data-dia="segunda">
+                    <label><strong>SEG</strong></label>
+                    <div class="horario-input">
+                        <input type="time" value="09:00">
+                        <span> - </span>
+                        <input type="time" value="17:00">
+                    </div>
+                </div>
+                <div class="dia-horario" data-dia="terca">
+                    <label><strong>TER</strong></label>
+                    <div class="horario-input">
+                        <input type="time" value="09:00">
+                        <span> - </span>
+                        <input type="time" value="17:00">
+                    </div>
+                </div>
+                <div class="dia-horario" data-dia="quarta">
+                    <label><strong>QUA</strong></label>
+                    <div class="horario-input">
+                        <input type="time" value="09:00">
+                        <span> - </span>
+                        <input type="time" value="17:00">
+                    </div>
+                </div>
+                <div class="dia-horario" data-dia="quinta">
+                    <label><strong>QUI</strong></label>
+                    <div class="horario-input">
+                        <input type="time" value="09:00">
+                        <span> - </span>
+                        <input type="time" value="17:00">
+                    </div>
+                </div>
+                <div class="dia-horario" data-dia="sexta">
+                    <label><strong>SEX</strong></label>
+                    <div class="horario-input">
+                        <input type="time" value="09:00">
+                        <span> - </span>
+                        <input type="time" value="17:00">
+                    </div>
+                </div>
+                <div class="dia-horario" data-dia="sabado">
+                    <label><strong>SAB</strong></label>
+                    <div class="horario-input">
+                        <input type="time" value="09:00">
+                        <span> - </span>
+                        <input type="time" value="17:00">
+                    </div>
+                </div>
+                <button onclick="salvarHorarios()">Salvar Horários</button>
+            </div>
+        </div>
+    
+        <div class="section" id="suporte">
+            <h2>Suporte</h2>
+            <p>Entre em contato com nossa equipe.</p>
+        </div>
+    </main>
+
+    <div id="editModal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-title">Editar Dados</h2>
+            <form id="modal-form">
+                <!-- Campos dinâmicos virão aqui -->
+            </form>
+            <button type="submit" form="modal-form" class="modal-button save">Salvar</button>
+        </div>
+    </div>
+
+    <div id="modal-chat" class="modal hidden">
+        <div class="modal-content">
+          <div class="msg-header">
+            <label id="msg-title" class="msg-title">CHAT</label>
+          </div>
+          <div id="msg-container" class="msg-container">
+  
+          </div>
+          <div class="msg-input">
+            <textarea id="msg-text"></textarea>
+            <button class="msg-btn" onclick="enviarMsg()"><i class="fa-regular fa-paper-plane"></i></button>
+          </div>
+        </div>
+    </div> 
+
+    <div id="modal-anamnese" class="modal hidden">
+        <div class="modal-content">
+          <div class="anam-header">
+            <label id="anam-title" class="msg-title">ANAMNESE DA SESSÃO</label>
+          </div>
+          <div class="anam-input">
+            <label class="anam-title">Resumo da sessão</label>
+            <textarea id="anam-resumo"></textarea>
+          </div>
+          <div class="anam-input">
+            <label class="anam-title">Emoções ou sintomas percebidos</label>
+            <textarea id="anam-sintomas"></textarea>
+          </div>
+          <button id="anam-btn" class="anam-btn" onclick="salvarAnamnese()">Salvar Anamnese</button>
+        </div>
+    </div> 
+
+    <div id="modal-notificacao" class="modal hidden">
+        <div class="modal-content">
+            <div class="notificacao-header"><label id="notificacao-title" class="notificacao-title">NOTIFICAÇÕES</label></div>
+            <div id="notificacao-container" class="notificacao-container"></div>
+            </div>
+        </div>
+    </div> 
+
+    <script src="../js/config.js"></script>
+    <script src="../js/perfil.js"></script>
+    <script src="../js/perfilCalendario.js"></script>
+</body>
+</html>

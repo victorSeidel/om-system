@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMSystem - Bem-vindo</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/cadastro.css"/>
+</head>
+<body>
+    <header>
+      <div class="logo">OM <span>System</span></div>
+      <nav>
+        <a href="/login" class="login-link">Já tem uma conta na OM? | <strong>Faça login</strong></a>
+      </nav>
+    </header>
+
+    <main>
+        <div class="welcome-text">
+            <strong>Criar uma conta</strong>
+            <p>Seja bem-vindo (a) ao OM! Diga-nos o que você está procurando.</p>
+        </div>
+
+        <label class="option">
+          <input type="radio" name="option" checked="checked" value="cliente">
+          <div class="option-text">
+              <span class="option-title">Eu quero ser atendida</span>
+              <span class="option-description">Encontre profissionais incríveis, os melhores do Brasil</span>
+          </div>
+        </label>
+
+      <label class="option">
+          <input type="radio" name="option" value="terapeuta">
+          <div class="option-text">
+              <span class="option-title">Eu sou Terapeuta / Instrutora</span>
+              <span class="option-description">Leve a sua transformação e alcance almas preciosas</span>
+          </div>
+      </label>
+
+      <button class="continue-button" onclick="continuarCadastro()">Continuar</button>
+    </main>
+
+    <script>
+      async function continuarCadastro()
+      {
+        const tipo = document.querySelector('input[name="option"]:checked').value;
+        window.location.href = `/cadastro?tipo=${tipo}`;
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+main {
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    background: none;
+}
+
+.main-title {
+    color: #84855D;
+}
+
+.sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.section-container {
+    border-radius: 12px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card img {
+    flex-shrink: 0;
+}
+
+.card label strong {
+    color: #008423;
+    font-size: 20px;
+}
+
+.card label, .card p {
+    color: black;
+    margin: 0;
+}
+
+.card label span {
+    color: gray;
+    font-size: 12px;
+}
+
+.card button {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0;
+    width: 200px;
+    height: 50px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    flex-grow: 1;
+}
+
+.texts div {
+    padding: 0px 0px 7px 0px;
+}
+
+.title {
+    color: #008423 !important;
+    font-size: 28px !important;
+}
+
+.dia {
+    color: black !important;
+    font-size: 22px !important;
+}
+
+.chat-btn {
+    background-color: #008423;
+    color: white;
+    width: 60px !important;
+    height: 40px !important;
+}
+
+.chat-btn:hover {
+    background-color: #0b7227;
+}
+
+.atend-btn {
+    background-color: #008423;
+    color: white;
+}
+
+.atend-btn:hover {
+    background-color: #0b7227;
+}
+
+.reagendar-btn {
+    background-color: white;
+    color: #008423;
+}
+
+.reagendar-btn:hover {
+    text-decoration: underline;
+}
+
+.cancel-btn {
+    background-color: white;
+    color: red;
+}
+
+.cancel-btn:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    width: 1015px;
+    border-radius: 12px;
+    padding: 30px;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.agendamento-container, .perfil-container {
+    display: flex;
+    gap: 30px;
+}
+
+.terapeuta-info {
+    width: 35%;
+}
+
+.foto-terapeuta {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.terapeuta-info h3, .perfil-container h3 {
+    margin: 10px 0 5px;
+    color: #267C66;
+}
+
+.terapeuta-info p, .perfil-container {
+    color: black;
+    margin: 20px 0px;
+}
+
+.tempo, .preco {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.tempo span {
+    color: black;
+    display: block;
+    font-size: 18px;
+}
+
+.preco span {
+    color: white;
+    background-color: #008423;
+    border-radius: 12px;
+    border: none;
+    padding: 10px;
+    display: block;
+    font-size: 16px;
+}

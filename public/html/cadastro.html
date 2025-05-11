@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMSystem - Cadastro</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/cadastro.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <header>
+      <div class="logo">OM <span>System</span></div>
+      <nav>
+        <a href="/login" class="login-link">Já tem uma conta na OM? | <strong>Faça login</strong></a>
+      </nav>
+    </header>
+
+    <main>
+        <div class="welcome-text">
+            <strong id="title">Cadastre-se como terapeuta</strong>
+            <p id="subtitle">Quer ser atendida? <a>Cadastre-se como cliente.</a></p>
+        </div>
+
+        <form>
+            <div class="inputs">
+                <input type="text" id="nome" placeholder="Nome e sobrenome" maxlength="50" required>
+                <input type="email" id="email" placeholder="E-mail" maxlength="100" required>
+                <input type="tel" id="tel" placeholder="DDD + número" maxlength="20" required>
+                <input type="password" id="senha" placeholder="Senha" maxlength="16" required>
+                <input type="password" id="conSenha" placeholder="Confirmar senha" maxlength="16" required>
+            </div>
+    
+            <div class="terms">
+                <p> <input type="checkbox" name="terms" required> Declaro que li e aceito os <a href="">termos de uso e política de privacidade</a> da OM System.</p>
+            </div>
+    
+          <button type="submit" class="continue-button" onclick="cadastrar(event)">Cadastrar</button>
+        </form>
+    </main>
+
+    <div id="modal" class="modal hidden">
+        <div id="modal-verificacao">
+            <p>Digite o código enviado para seu e-mail</p>
+            <input id="codigo-digitado" type="text" maxlength="6">
+            <button id="verificar-codigo-btn">Verificar</button>
+        </div>
+    </div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/cadastro-login.js"></script>
+</body>
+</html>

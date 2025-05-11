@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMSystem - Login</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/navbar.css"/>
+    <link rel="stylesheet" href="../css/agendamentos.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <header>
+      <div class="logo">OM <span>System</span></div>
+      <nav>
+        <a href="/inicio" class="login-link"><strong>Home</strong></a>
+        <a href="/agendamentos" class="login-link" style="text-decoration: underline;"><strong>Agendamentos</strong></a>
+        <a href="/" class="login-link"><strong>Sessões realizadas</strong></a>
+        <a href="/eventos" class="login-link"><strong>Eventos</strong></a>
+      </nav>
+      <div style="display:flex;">
+        <div class="logo"><img src="" alt="" id="perfil-img" width="40px" height="40px" style="border-radius: 50%;"></div>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="main-title">Agendamentos</h1>
+
+      <div class="sections">
+          <section class="section-container" id="main-sec"></section>
+      </div>      
+    </main>
+
+    <div id="modal-chat" class="modal hidden">
+      <div class="modal-content">
+        <div class="msg-header">
+          <label id="msg-title" class="msg-title">CHAT</label>
+        </div>
+        <div id="msg-container" class="msg-container">
+
+        </div>
+        <div class="msg-input">
+          <textarea id="msg-text"></textarea>
+          <button class="msg-btn" onclick="enviarMsg()"><i class="fa-regular fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-aval" class="modal hidden">
+      <div class="modal-content">
+        <div class="aval-header">
+          <label id="aval-title" class="aval-title">AVALIE SUA SESSÃO</label>
+        </div>
+          <div class="aval-input">
+          <label class="aval-title">Nota (1 a 5)</label>
+          <input id="aval-nota" class="aval-nota" type="number" min="1" max="5">
+        </div>
+        <div class="aval-input">
+          <label class="aval-title">Comentário</label>
+          <textarea id="aval-coment"></textarea>
+        </div>
+        <button id="aval-btn" class="aval-btn">Enviar Avaliação</button>
+      </div>
+    </div> 
+
+    <script src="../js/config.js"></script>
+    <script src="../js/agendamentos.js"></script>
+</body>
+</html>

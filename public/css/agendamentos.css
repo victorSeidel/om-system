@@ -1,0 +1,263 @@
+main {
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    background: none;
+}
+
+.main-title {
+    color: #84855D;
+}
+
+.sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.section-container {
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0px 0px 15px 0px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card label strong {
+    color: #008423;
+    font-size: 20px;
+}
+
+.card label, .card p {
+    color: black;
+}
+
+.card label span {
+    color: gray;
+    font-size: 12px;
+}
+
+.card button {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0;
+    width: 200px;
+    height: 50px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.texts div {
+    padding: 0px 0px 7px 0px;
+}
+
+.title {
+    color: black !important;
+    font-size: 28px !important;
+}
+
+.chat-btn {
+    background-color: #008423;
+    color: white;
+    width: 60px !important;
+    height: 40px !important;
+}
+
+.chat-btn:hover {
+    background-color: #0b7227;
+}
+
+.atend-btn {
+    background-color: #008423;
+    color: white;
+}
+
+.atend-btn:hover {
+    background-color: #0b7227;
+}
+
+.reagendar-btn {
+    background-color: white;
+    color: #008423;
+}
+
+.reagendar-btn:hover {
+    text-decoration: underline;
+}
+
+.cancel-btn {
+    background-color: white;
+    color: red;
+}
+
+.cancel-btn:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    width: 1015px;
+    border-radius: 12px;
+    padding: 30px;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.msg-header {
+    margin: 0px 0px 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.msg-title {
+    color: #008423;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.msg-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.msg-card {
+    background-color: #ffffffb0;
+    border-radius: 12px;
+    padding: 0px;
+    margin: 0px 0px 15px 0px;
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    height: auto;
+}
+
+.msg-card label strong, .msg-card  p {
+    color: black;
+}
+
+.msg-input {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+textarea {
+    width: 93%;
+    resize: none;
+    height: 50px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.msg-btn {
+    cursor: pointer;
+    background-color: #008423;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    width: 7%;
+    height: 50px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.msg-btn:hover {
+    background-color: #0b7227;
+}
+
+.aval-header {
+    margin: 0px 0px 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.aval-title {
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.aval-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+.aval-input .aval-nota {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    margin: 0px 0px 10px 0px;
+    font-size: 14px;
+    border-radius: 12px;
+}
+
+.aval-input textarea {
+    width: 100%;
+    resize: none;
+    height: 150px;
+    padding: 10px;
+    margin: 0px 0px 10px 0px;
+    font-size: 14px;
+    border-radius: 12px;
+}
+
+.aval-btn {
+    cursor: pointer;
+    background-color: #008423;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.aval-btn:hover {
+    background-color: #0b7227;
+}

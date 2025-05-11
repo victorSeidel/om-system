@@ -1,0 +1,191 @@
+body {
+    background-color: #E7E7E7;
+    padding: 0px;
+}
+
+header {
+    background-color: #84855D;
+    padding: 10px 20px;
+}
+
+main {
+    background-color: white;
+    margin: 100px 0px 0px 0px;
+    padding: 30px 0px;
+}
+
+.login-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.welcome-text {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    color: #84855D;
+}
+
+.welcome-text p {
+    font-size: 16px;
+}
+
+.option {
+    margin: 40px auto;
+    max-width: 650px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #84855D;
+}
+
+.option input[type="radio"] {
+    margin: 0px 15px 0px 5px;
+    transform: scale(1.5);
+}
+
+.option-text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.option-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.option-description {
+    font-size: 14px;
+    color: #84855D;
+}
+
+.continue-button {
+    background-color: #008423;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 650px;
+    max-width: 650px;
+    font-weight: bold;
+}
+
+.continue-button:hover {
+    background-color: #0b7227;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs input {
+    display: flex;
+    text-align: start;
+    background-color: #F7F7F7;
+    font-size: 16px;
+    color: black;
+    border: 1px solid #84855D;
+    border-radius: 12px;
+    width: 650px;
+    max-width: 650px;
+    height: 50px;
+    padding: 10px 10px 10px 20px;
+    margin: 0px 0px 15px 0px;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 0px 20px 0px;
+    color: gray;
+}
+
+.welcome-text p a, .terms p a {
+    color: blue;
+    text-decoration: none;
+}
+
+.welcome-text p a:hover, .terms p a:hover {
+    text-decoration: underline;
+}
+
+.modal.hidden {
+    display: none !important;
+}
+
+.modal {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    z-index: 1000;
+}
+
+#modal-verificacao {
+    background: white;
+    width: 1015px;
+    border-radius: 12px;
+    padding: 30px;
+    font-family: sans-serif;
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    gap: 20px;
+}
+
+#modal-verificacao p {
+    color: black;
+}
+
+#modal-verificacao input {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+#modal-verificacao input:focus {
+    border-color: #84855D;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(132, 133, 93, 0.2);
+}
+
+#modal-verificacao button {
+    width: 200px;
+    background-color: white;
+    color: blue;
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 1px solid blue !important;
+    cursor: pointer;
+    font-size: 14px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#modal-verificacao button:hover {
+    background-color: blue;
+    color: white;
+}
