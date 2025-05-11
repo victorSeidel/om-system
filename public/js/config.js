@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:3000/api";
+const API_BASE_URL = "https://om-system-production.up.railway.app/api";
 
 window.addEventListener('unload', function () { navigator.sendBeacon('/logout'); });
 
