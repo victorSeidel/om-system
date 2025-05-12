@@ -78,7 +78,7 @@ async function carregarTerapeutas()
             card.classList.add('card');
 
             card.innerHTML = `
-                <img src="${imagem}" alt="Foto de perfil: ${terapeuta.usuario.nome}" style="width: 20%; height: auto; border-radius: 12px;"/>
+                <img src="${imagem}" alt="Foto de perfil: ${terapeuta.usuario.nome}" style="width: 20%; height: auto; border-radius: 50%;"/>
                 <div class="texts">
                     <div class="title">
                         <label><strong>${terapeuta.usuario.nome}</strong>
