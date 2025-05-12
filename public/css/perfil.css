@@ -17,22 +17,65 @@ header a {
 
 main {
     display: flex;
-    align-items: center;
-    margin: 20px 0px 0px 200px;
+    flex-direction: column;
+    width: 100%;
+    margin: 15px auto 0px auto;
     padding: 20px;
 }
 
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 77px;
     left: 0;
-    height: 100vh;
+    height: calc(100vh - 77px);
     width: 200px;
     background-color: white;
-    margin-top: 77px;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    z-index: 1;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    text-align: start;
+}
+
+.sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: none;
+}
+
+.sections {
+    margin-left: clamp(60px, 12vw, 200px);
+}
+
+@media (max-width: 768px) {
+    main {
+        margin: 0 0;
+        padding: 20px;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .sections {
+        margin-left: 0;
+    }
 }
 
 .menu-item {
@@ -126,8 +169,9 @@ main {
     flex-direction: column;
 
     background-color: white;
-    width: 95%;
-    margin: 0px 0px 0px 40px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 20px auto;
     padding: 35px;
 }
 
@@ -136,6 +180,7 @@ main {
     flex-direction: row;
     gap: 20px;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .inicio-field > * {
@@ -160,8 +205,9 @@ main {
 }
 
 .inicio-column img {
-    width: 480px;
-    height: 272px;
+    max-width: 480px;
+    max-height: 272px;
+    aspect-ratio: 16/9;
 }
 
 .file-hidden {
@@ -196,12 +242,39 @@ main {
     flex-direction: row;
     width: 100%;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .inicio-sub-column {
     display: flex;
     flex-direction: column;
     flex: 1;
+}
+
+@media (max-width: 768px) {
+    .section.active {
+        margin: 0;
+    }
+
+    .inicio-section.active {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+        padding: 15px;
+    }
+    
+    .inicio-field {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .inicio-field > :last-child {
+        flex: 1;
+    }
+    
+    .sub-columns-container {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
 
 .inicio-column input, .inicio-column select, .inicio-column textarea {
@@ -232,6 +305,12 @@ main {
     width: 1300px;
     height: 2px;
     background-color: #84855da9;
+}
+
+@media (max-width: 1800px) {
+    #conta h2::after {
+        width: 50%;
+    }
 }
 
 .edit-btn {
@@ -297,6 +376,17 @@ main {
 
 .horario-semanal button {
     width: 200px;
+    height: 40px;
+    background-color: white;
+    color: blue;
+    border: 1px solid blue;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.horario-semanal button:hover {
+    background-color: blue;
+    color: white;
 }
 
 .horario-semanal span {
@@ -331,6 +421,21 @@ main {
     border-radius: 12px;
     width: 120px;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .horario-semanal {
+        margin-top: 0px;
+        flex-direction: column;
+    }
+
+    .dia-horario {
+        flex-direction: column;
+    }
+
+    .horario-input {
+        flex-direction: column;
+    }
 }
 
 .horario-input span {
