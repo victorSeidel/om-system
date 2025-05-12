@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://om-system-production.up.railway.app/api";
+const API_BASE_URL = "https://om-system.onrender.com/api";
 
 window.addEventListener('unload', function () { navigator.sendBeacon('/logout'); });
 
